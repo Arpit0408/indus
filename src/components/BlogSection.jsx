@@ -1,32 +1,17 @@
 import React from "react";
-import { Link } from "react-router-dom"; // Import Link
+import { Link } from "react-router-dom";
+
+import blogImage1 from "../assets/images/blog/1.jpg";
+import blogImage2 from "../assets/images/blog/2.jpg";
+import blogImage3 from "../assets/images/blog/3.jpg";
+import authorImage from "../assets/images/blog-page/6.jpg";
 
 const blogData = [
-  {
-    id: 1,
-    title: "Justice May For You If You Are Innocent",
-    image: "src/assets/images/blog/1.jpg",
-    authorImage: "src/assets/images/blog-page/6.jpg",
-    author: "Aliza",
-    date: "Oct 12, 2018",
-  },
-  {
-    id: 2,
-    title: "Justice May For You If You Are Innocent",
-    image: "src/assets/images/blog/2.jpg",
-    authorImage: "src/assets/images/blog-page/6.jpg",
-    author: "Aliza",
-    date: "Oct 12, 2018",
-  },
-  {
-    id: 3,
-    title: "Justice May For You If You Are Innocent",
-    image: "src/assets/images/blog/3.jpg",
-    authorImage: "src/assets/images/blog-page/6.jpg",
-    author: "Aliza",
-    date: "Oct 12, 2018",
-  },
+  { id: 1, title: "Justice May For You If You Are Innocent", image: blogImage1, authorImage, author: "Aliza", date: "Oct 12, 2018" },
+  { id: 2, title: "Justice May For You If You Are Innocent", image: blogImage2, authorImage, author: "Aliza", date: "Oct 12, 2018" },
+  { id: 3, title: "Justice May For You If You Are Innocent", image: blogImage3, authorImage, author: "Aliza", date: "Oct 12, 2018" },
 ];
+
 
 const BlogSection = () => {
   return (
