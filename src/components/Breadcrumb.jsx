@@ -8,7 +8,7 @@ const Breadcrumb = ({ items, title }) => {
                  bg-[url('../images/breadcumb/1.html')] bg-no-repeat bg-center bg-cover text-left"
     >
       <div className="wraper">
-        <div className="w-[1200px] ml-auto text-left pt-[50px] ">
+        <div className=" ml-auto text-left pt-[50px] ">
           <h2 className="text-[2.5rem] sm:text-[2rem] text-white leading-[60px] mt-[-10px] mb-[20px] font-black sm:text-[30px] sm:leading-[35px] sm:mb-[10px]">
             {title}
           </h2>

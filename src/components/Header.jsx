@@ -1,4 +1,4 @@
-import React, { useState, useRef } from 'react';
+import React, { useState } from 'react';
 import {
   AppBar,
   Box,
@@ -11,122 +11,18 @@ import {
   ListItem,
   ListItemText,
   useMediaQuery,
-  Popper,
-  Paper,
-  Grow,
-  ClickAwayListener,
-  MenuList,
-  MenuItem,
   Container,
 } from '@mui/material';
 import { Link, useLocation } from 'react-router-dom';
 import { AiOutlineMenu } from 'react-icons/ai';
-import { ArrowDropDown } from '@mui/icons-material';
 import { useTheme } from '@mui/material/styles';
 
 const navItems = [
   { label: 'Home', path: '/' },
   { label: 'About', path: '/about' },
-    { label: 'Service', path: '/service' },
-
-  // {
-  //   label: 'Services',
-  //   submenu: [
-  //     { label: 'Legal Services', path: '/services/legal' },
-  //     { label: 'NRI Assistance', path: '/services/nri' },
-  //     { label: 'Corporate Law', path: '/services/corporate' },
-  //     { label: 'Wealth & Legacy', path: '/services/wealth' },
-  //   ],
-  // },
-  // { label: 'Founders', path: '/founders' },
-  // { label: 'FAQ', path: '/faq' },
+  { label: 'Service', path: '/service' },
   { label: 'Contact', path: '/contact' },
 ];
-
-const ServicesDropdown = ({ isActive }) => {
-  const [open, setOpen] = useState(false);
-  const anchorRef = useRef(null);
-
-  const services = navItems.find((item) => item.label === 'Services').submenu;
-
-  return (
-    <Box
-      onMouseEnter={() => setOpen(true)}
-      onMouseLeave={() => setOpen(false)}
-      sx={{ display: 'inline-block', position: 'relative' }}
-    >
-      <Button
-        ref={anchorRef}
-        endIcon={<ArrowDropDown />}
-        disableRipple
-        sx={{
-          color: isActive('/services') ? '#c0b596' : 'white',
-          fontSize: '1.1rem',
-          textTransform: 'capitalize',
-          backgroundColor: 'transparent !important',
-          '&:hover': {
-            backgroundColor: 'transparent',
-            color: '#c0b596',
-          },
-          minWidth: 100,
-        }}
-      >
-        Services
-      </Button>
-
-      <Popper
-        open={open}
-        anchorEl={anchorRef.current}
-        placement="bottom-start"
-        transition
-        disablePortal
-        modifiers={[
-          {
-            name: 'offset',
-            options: {
-              offset: [0, 8],
-            },
-          },
-        ]}
-        sx={{ zIndex: 9999 }}
-      >
-        {({ TransitionProps }) => (
-          <Grow {...TransitionProps} style={{ transformOrigin: 'left top' }}>
-            <Paper
-              elevation={2}
-              sx={{ minWidth: 180, border: '1px solid #eee' }}
-              onMouseEnter={() => setOpen(true)}
-              onMouseLeave={() => setOpen(false)}
-            >
-              <ClickAwayListener onClickAway={() => setOpen(false)}>
-                <MenuList autoFocusItem={open}>
-                  {services.map((item) => (
-                    <MenuItem
-                      key={item.label}
-                      component={Link}
-                      to={item.path}
-                      onClick={() => setOpen(false)}
-                      sx={{
-                        fontSize: '1.05rem',
-                        color: '#333',
-                        '&:hover': {
-                          backgroundColor: '#f4f4f4',
-                          color: '#272c3f',
-                        },
-                      }}
-                    >
-                      {item.label}
-                    </MenuItem>
-                  ))}
-                </MenuList>
-              </ClickAwayListener>
-            </Paper>
-          </Grow>
-        )}
-      </Popper>
-    </Box>
-  );
-};
 
 const Header = () => {
   const location = useLocation();
@@ -148,33 +44,45 @@ const Header = () => {
           backgroundColor: '#272c3f',
           boxShadow: '0 2px 4px rgba(0,0,0,0.1)',
           zIndex: theme.zIndex.drawer + 1,
-          width: '100%',
+          // Crucial for mobile width
+          width: '100vw !important', // Use 100vw to ensure it covers the *viewport width*
+          left: '0 !important',
+          right: '0 !important',
+          overflowX: 'hidden !important', // Ensure no horizontal overflow within AppBar
         }}
       >
         <Container
-          maxWidth={false}
+          // Using `disableGutters` if you want to control padding manually on the Container
+          // and let the Toolbar manage its inner spacing.
+          // Or keep it false if you rely on Material-UI's default Container padding.
+          disableGutters={false} // Keeping default Material-UI gutters can be helpful
           sx={{
-            width: '100%',
+            width: '100%', // Take full width of AppBar
+            // Max width for larger screens
             maxWidth: { xs: '100%', md: '90vw' },
-            pl: { xs: 1, md: 3 },
-            pr: { xs: 5, md: 3 },
-            mx: { xs: 0, md: 'auto' },
+            // Responsive padding
+            px: { xs: 2, md: 3 }, // Example: 16px on mobile, 24px on desktop
+            mx: 'auto', // Center the container horizontally
+            // No overflowX here, rely on AppBar's overflowX: hidden
           }}
         >
           <Toolbar
-            disableGutters
+            disableGutters // Remove Toolbar's default horizontal padding
             sx={{
               display: 'flex',
               justifyContent: 'space-between',
               alignItems: 'center',
               minHeight: { xs: 56, md: 64 },
-              px: 0,
+              width: '100%',
+              // The container's padding should handle spacing from edges, so Toolbar px:0
+              px: 0, 
             }}
           >
             <Typography
               variant="h6"
               component={Link}
               to="/"
+              noWrap // Prevent text from wrapping and expanding width
               sx={{
                 textDecoration: 'none',
                 color: 'white',
@@ -182,7 +90,8 @@ const Header = () => {
                 fontSize: { xs: '1.1rem', md: '1.3rem' },
                 textTransform: 'uppercase',
                 userSelect: 'none',
-                flexShrink: 0,
+                flexShrink: 0, // Prevent shrinking if space is tight
+                mr: 2, // Margin right for spacing to menu icon
               }}
             >
               IndUS Synergy
@@ -195,124 +104,87 @@ const Header = () => {
                 onClick={toggleDrawer(true)}
                 size="large"
                 aria-label="menu"
+                sx={{ ml: 'auto' }} // Push menu icon to the far right
               >
                 <AiOutlineMenu />
               </IconButton>
             ) : (
               <Box sx={{ display: 'flex', gap: 3, alignItems: 'center' }}>
-                {navItems.map((item) =>
-                  item.label === 'Services' ? (
-                    <ServicesDropdown key={item.label} isActive={isActive} />
-                  ) : (
-                    <Button
-                      key={item.label}
-                      component={Link}
-                      to={item.path}
-                      sx={{
-                        color: isActive(item.path) ? '#c0b596' : 'white',
-                        fontSize: '1.1rem',
-                        textTransform: 'capitalize',
-                        '&:hover': { color: '#c0b596' },
-                        minWidth: 80,
-                      }}
-                    >
-                      {item.label}
-                    </Button>
-                  )
-                )}
+                {navItems.map((item) => (
+                  <Button
+                    key={item.label}
+                    component={Link}
+                    to={item.path}
+                    sx={{
+                      color: isActive(item.path) ? '#c0b596' : 'white',
+                      fontSize: '1.1rem',
+                      textTransform: 'capitalize',
+                      '&:hover': { color: '#c0b596' },
+                      minWidth: 80,
+                    }}
+                  >
+                    {item.label}
+                  </Button>
+                ))}
               </Box>
             )}
           </Toolbar>
         </Container>
       </AppBar>
 
-      <Drawer anchor="left" open={drawerOpen} onClose={toggleDrawer(false)}>
-        <Box
-          sx={{
+      <Drawer
+        anchor="left"
+        open={drawerOpen}
+        onClose={toggleDrawer(false)}
+        PaperProps={{
+          sx: {
             width: 260,
             backgroundColor: 'white',
+            overflowX: 'hidden', // Drawer content overflow handling
+          },
+        }}
+      >
+        <Box
+          sx={{
             height: '100%',
-            pt: 6,
+            pt: 6, // Padding top to clear AppBar
             px: 3,
+            overflowY: 'auto', // Scrollable if list is long
           }}
           role="presentation"
           onClick={toggleDrawer(false)}
           onKeyDown={toggleDrawer(false)}
         >
           <List>
-            {navItems.map((item) => {
-              if (item.submenu) {
-                return (
-                  <Box key={item.label} sx={{ mb: 3 }}>
-                    <ListItem>
-                      <ListItemText
-                        primary={item.label}
-                        primaryTypographyProps={{
-                          fontWeight: 'bold',
-                          fontSize: '1.2rem',
-                          color: 'black',
-                        }}
-                      />
-                    </ListItem>
-                    {item.submenu.map((subItem) => (
-                      <ListItem
-                        button
-                        key={subItem.label}
-                        component={Link}
-                        to={subItem.path}
-                        selected={isActive(subItem.path)}
-                        sx={{
-                          pl: 4,
-                          mb: 1,
-                          color: 'black',
-                          fontSize: '1.1rem',
-                          borderRadius: 1,
-                          '&.Mui-selected': {
-                            backgroundColor: '#f0e8d5',
-                            color: '#c0b596',
-                            fontWeight: 'bold',
-                          },
-                          '&:hover': {
-                            backgroundColor: '#f4f4f4',
-                          },
-                        }}
-                      >
-                        <ListItemText primary={subItem.label} />
-                      </ListItem>
-                    ))}
-                  </Box>
-                );
-              } else {
-                return (
-                  <ListItem
-                    button
-                    key={item.label}
-                    component={Link}
-                    to={item.path}
-                    selected={isActive(item.path)}
-                    sx={{
-                      mb: 1.5,
-                      color: 'black',
-                      fontSize: '1.15rem',
-                      borderRadius: 1,
-                      '&.Mui-selected': {
-                        backgroundColor: '#f0e8d5',
-                        color: '#c0b596',
-                      },
-                      '&:hover': {
-                        backgroundColor: '#f4f4f4',
-                      },
-                    }}
-                  >
-                    <ListItemText primary={item.label} />
-                  </ListItem>
-                );
-              }
-            })}
+            {navItems.map((item) => (
+              <ListItem
+                button
+                key={item.label}
+                component={Link}
+                to={item.path}
+                selected={isActive(item.path)}
+                sx={{
+                  mb: 1.5,
+                  color: 'black',
+                  fontSize: '1.15rem',
+                  borderRadius: 1,
+                  '&.Mui-selected': {
+                    backgroundColor: '#f0e8d5',
+                    color: '#c0b596',
+                  },
+                  '&:hover': {
+                    backgroundColor: '#f4f4f4',
+                  },
+                }}
+              >
+                <ListItemText primary={item.label} />
+              </ListItem>
+            ))}
           </List>
         </Box>
       </Drawer>
 
+      {/* This Toolbar creates a placeholder to push content down below the fixed AppBar */}
       <Toolbar />
     </>
   );
