@@ -26,7 +26,7 @@ const Preloader = () => {
         variant="subtitle1"
         sx={{ mt: 3, color: "#c0b596", fontWeight: 400 }}
       >
-        Loading IndUS Synergy...
+        Loading IndUS Synergy Partners...
       </Typography>
     </Box>
   );

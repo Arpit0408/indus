@@ -79,7 +79,7 @@ export default function AboutSection() {
                   <Box
                     component="img"
                     src={indusabout}
-                    alt="About IndUS Synergy Partners"
+                    alt="About IndUS Synergy Partners Partners"
                     sx={{ width: '100%', display: 'block', borderRadius: 1 }}
                   />
                 </Box>
@@ -121,7 +121,7 @@ export default function AboutSection() {
                     mb: 2,
                   }}
                 >
-                  That’s why we created IndUS Synergy Partners — to give U.S.-based NRIs and global Indian families a reliable, ethical, and powerful alternative to navigating India’s legal and financial systems alone.
+                  That’s why we created IndUS Synergy Partners Partners — to give U.S.-based NRIs and global Indian families a reliable, ethical, and powerful alternative to navigating India’s legal and financial systems alone.
                 </Typography>
 
                 {/* Core Features as List Buttons */}

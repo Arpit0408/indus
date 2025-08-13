@@ -1,7 +1,7 @@
 import React from 'react';
 import { Box, Grid, Typography, Button } from '@mui/material';
-import aboutMainImage from '../assets/images/about/2.jpg';
-import signatureImage from '../assets/images/about/1.png';
+// import aboutMainImage from '../assets/images/about/2.jpg';
+// import signatureImage from '../assets/images/about/1.png';
 import founders from '../assets/images/founders.jpeg';
 export default function AboutSection() {
   return (
@@ -54,7 +54,7 @@ export default function AboutSection() {
                 <Box
                   component="img"
                   src={founders}
-                  alt="About IndUS Synergy Partners"
+                  alt="About IndUS Synergy Partners Partners"
                   sx={{ width: '100%', display: 'block', borderRadius: 1 }}
                 />
               </Box>
@@ -97,7 +97,7 @@ export default function AboutSection() {
                   mb: 2,
                 }}
               >
-                At IndUS Synergy Partners, we are not just attorneys or advisors. We are your partners in clarity—bridging the complexity of Indian legal systems with the confidence of U.S.-based coordination.
+                At IndUS Synergy Partners Partners, we are not just attorneys or advisors. We are your partners in clarity—bridging the complexity of Indian legal systems with the confidence of U.S.-based coordination.
               </Typography>
 
               <Typography
@@ -119,9 +119,9 @@ export default function AboutSection() {
                   mb: 3,
                 }}
               >
-                No confusion.<br />
-                No corruption.<br />
-                Just action, structure, and peace of mind.
+                No confusion.
+                No corruption.
+                Just action, structure, comfort.
               </Typography>
 
               <Button

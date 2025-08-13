@@ -1,6 +1,8 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import NewsletterSection from './NewsletterSection';
+import Indussynergylogo from "../assets/images/logoimage.jpeg";
+
 const Footer = () => {
   return (
    <>
@@ -14,11 +16,16 @@ const Footer = () => {
               <div className="text-left">
                 <div className="mb-7">
                   <Link to="/" className="text-[45px] font-bold flex items-center text-white">
-                    <h6 className="text-white text-[1.5rem] uppercase">IndUS Synergy</h6>
+<img
+  src={Indussynergylogo}
+  alt="IndUS Synergy Logo"
+  className="w-[6rem] h-[6rem] rounded-sm object-cover"
+/>
+                    {/* <h6 className="text-white text-[1.5rem] uppercase">IndUS Synergy Partners</h6> */}
                   </Link>
                 </div>
                 <p className="text-white text-[16px] mb-[10px]">
-                  IndUS Synergy bridges the legal, corporate, and personal needs of NRIs with expert guidance, personalized strategies, and unwavering integrity.
+                  IndUS Synergy Partners bridges the legal, corporate, and personal needs of NRIs with expert guidance, personalized strategies, and unwavering integrity.
                 </p>
                 <ul className="overflow-hidden pt-[15px] flex space-x-[15px]">
                   {['facebook', 'twitter-alt', 'linkedin', 'pinterest', 'vimeo-alt'].map((icon, index) => (
@@ -37,8 +44,8 @@ const Footer = () => {
                   <h3 className="text-[28px] font-medium text-white capitalize">Quick Links</h3>
                 </div>
                 <ul>
-                  {['Home', 'About Us', 'Our Founders', 'FAQs', 'Contact'].map((label, idx) => {
-                    const path = ['/', '/about', '/founders', '/faq', '/contact'][idx];
+                  {['Home', 'About Us', 'Blogs', 'Contact'].map((label, idx) => {
+                    const path = ['/', '/about', '/blog', '/contact'][idx];
                     return (
                       <li key={idx} className="mb-[8px]">
                         <Link to={path} className="text-white hover:text-[#c0b596] transition-all">{label}</Link>
@@ -55,11 +62,11 @@ const Footer = () => {
                 </div>
                 <ul>
                   {[
-                    ['Family Law', '/services/family-law'],
-                    ['Property Disputes', '/services/property-disputes'],
-                    ['Business Law', '/services/business-law'],
-                    ['Corporate Compliance', '/services/corporate'],
-                    ['Wealth & Legacy', '/services/wealth'],
+                    ['Family Law', '/service'],
+                    ['Property Disputes', '/service'],
+                    ['Business Law', '/service'],
+                    ['Corporate Compliance', '/service'],
+                    ['Wealth & Legacy', '/service'],
                   ].map(([label, path], idx) => (
                     <li key={idx} className="mb-[8px]">
                       <Link to={path} className="text-white hover:text-[#c0b596] transition-all">{label}</Link>
@@ -74,10 +81,10 @@ const Footer = () => {
                   <h3 className="text-[28px] font-medium text-white capitalize">Contact Us</h3>
                 </div>
                 <ul className="text-white">
-                  <li className="mb-[8px]">IndUS Synergy Headquarters</li>
-                  <li className="mb-[8px]">4th Floor, Global Towers, New Delhi, India</li>
-                  <li className="mb-[8px]">Phone: +91 98765 43210</li>
-                  <li className="mb-[8px]">Email: connect@indussynergy.com</li>
+                  <li className="mb-[8px]">IndUS Synergy Partners Headquarters</li>
+                  <li className="mb-[8px]">Based in: DFW, Texas | Representing Clients Across India</li>
+                  <li className="mb-[8px]">Phone: +1 (361) 910-5313 <br/> +1 (361) 910-3199</li>
+                  <li className="mb-[8px]">Email: indusynergypartners@gmail.com</li>
                 </ul>
               </div>
             </div>
@@ -89,7 +96,7 @@ const Footer = () => {
           <div className="max-w-[1500px] mx-auto border-t border-[rgba(192,181,150,.3)] relative">
             <div className="h-[1px] absolute left-[15px] top-0 bg-[#ffffff0d] w-[calc(100%+30px)]"></div>
             <p className="text-center text-white text-[14px] py-[20px]">
-              &copy; 2025 IndUS Synergy. All rights reserved |{' '}
+              &copy; 2025 IndUS Synergy Partners. All rights reserved |{' '}
               <Link to="/privacy" className="hover:underline">Privacy Policy</Link>
             </p>
           </div>

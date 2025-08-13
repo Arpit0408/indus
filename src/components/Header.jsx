@@ -16,11 +16,13 @@ import {
 import { Link, useLocation } from 'react-router-dom';
 import { AiOutlineMenu } from 'react-icons/ai';
 import { useTheme } from '@mui/material/styles';
+import Indussynergylogo from "../assets/images/logoimage.jpeg";
 
 const navItems = [
   { label: 'Home', path: '/' },
   { label: 'About', path: '/about' },
   { label: 'Service', path: '/service' },
+  { label: 'Blog', path: '/blog' },
   { label: 'Contact', path: '/contact' },
 ];
 
@@ -41,7 +43,9 @@ const Header = () => {
       <AppBar
         position="fixed"
         sx={{
-          backgroundColor: '#272c3f',
+          backgroundColor: '#fff',
+
+          //272c3f
           boxShadow: '0 2px 4px rgba(0,0,0,0.1)',
           zIndex: theme.zIndex.drawer + 1,
           // Crucial for mobile width
@@ -78,11 +82,11 @@ const Header = () => {
               px: 0, 
             }}
           >
-            <Typography
+            {/* <Typography
               variant="h6"
               component={Link}
               to="/"
-              noWrap // Prevent text from wrapping and expanding width
+              noWrap 
               sx={{
                 textDecoration: 'none',
                 color: 'white',
@@ -90,13 +94,19 @@ const Header = () => {
                 fontSize: { xs: '1.1rem', md: '1.3rem' },
                 textTransform: 'uppercase',
                 userSelect: 'none',
-                flexShrink: 0, // Prevent shrinking if space is tight
-                mr: 2, // Margin right for spacing to menu icon
+                flexShrink: 0, 
+                mr: 2, 
               }}
             >
-              IndUS Synergy
-            </Typography>
-
+              IndUS Synergy Partners
+            </Typography> */}
+<Link to="/" className="flex items-center mr-2 flex-shrink-0">
+  <img
+    src={Indussynergylogo}
+    alt="IndUS Synergy Logo"
+    className="w-[6rem] h-[6rem] rounded-sm object-cover"
+  />
+</Link>
             {isMobile ? (
               <IconButton
                 color="inherit"
@@ -116,10 +126,10 @@ const Header = () => {
                     component={Link}
                     to={item.path}
                     sx={{
-                      color: isActive(item.path) ? '#c0b596' : 'white',
+                      color: isActive(item.path) ? '#272c3f' : '#272c3f',
                       fontSize: '1.1rem',
                       textTransform: 'capitalize',
-                      '&:hover': { color: '#c0b596' },
+                      '&:hover': { color: '#272c3f' },
                       minWidth: 80,
                     }}
                   >

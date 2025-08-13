@@ -42,7 +42,7 @@ const FromTheirDesk = () => {
         {/* Mission Statement */}
         <div className="bg-white border-l-4 border-[#c0b596] p-6 shadow-sm rounded-md text-gray-800 space-y-3">
           <p className="text-[0.95rem] md:text-base">
-            At <span className="font-semibold text-[#c0b596]">IndUS Synergy Partners</span>, we bring you the best of both worlds:
+            At <span className="font-semibold text-[#c0b596]">IndUS Synergy Partners Partners</span>, we bring you the best of both worlds:
           </p>
           <ul className="list-disc pl-5 text-[0.95rem] md:text-base">
             <li>Legal authority grounded in India</li>

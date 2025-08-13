@@ -3,47 +3,36 @@ import React from "react";
 import Slider from "react-slick";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
+import { FaUserCircle } from "react-icons/fa";
 
 const testimonials = [
   {
     name: "PRIYA SHARMA",
-    role: "NRI Entrepreneur, California",
-    img: "https://dummyimage.com/302x302",
     quote:
-      "IndUS Synergy simplified what felt impossible—navigating Indian inheritance laws while managing my U.S.-based assets.",
+      "IndUS Synergy Partners simplified what felt impossible—navigating Indian inheritance laws while managing my U.S.-based assets.",
   },
   {
     name: "RAHUL MEHRA",
-    role: "Real Estate Investor, Dubai",
-    img: "https://dummyimage.com/300x300",
     quote:
       "Clear advice. No surprises. The team gave us total confidence in handling a multi-jurisdiction property dispute.",
   },
   {
     name: "ANJALI RAO",
-    role: "Global HR Executive, London",
-    img: "https://dummyimage.com/305x305",
     quote:
       "Legal clarity, sharp strategy, and seamless execution. I couldn’t have asked for a better cross-border legal partner.",
   },
   {
     name: "VIKRAM SETH",
-    role: "Tech Founder, San Francisco",
-    img: "https://dummyimage.com/300x302",
     quote:
       "They translated complex Indian corporate compliance into a simple roadmap. Truly a strategic legal ally.",
   },
   {
     name: "NEHA GUPTA",
-    role: "Wealth Manager, New York",
-    img: "https://dummyimage.com/303x303",
     quote:
       "Every step was structured, secure, and transparent. Their wealth planning advice was instrumental for my clients.",
   },
   {
     name: "AMIT KHANNA",
-    role: "Philanthropist, Singapore",
-    img: "https://dummyimage.com/301x301",
     quote:
       "Their counsel helped us set up a fully compliant cross-border trust. Efficient, ethical, and forward-thinking.",
   },
@@ -89,17 +78,14 @@ const TestimonialSlider = () => {
           {testimonials.map((item, index) => (
             <div key={index} className="p-4">
               <div className="h-full text-center bg-white shadow-lg rounded-xl p-6 border border-gray-100">
-                <img
-                  alt={`Photo of ${item.name}`}
-                  className="w-20 h-20 mb-6 object-cover object-center rounded-full border-2 border-gray-200 bg-gray-100 mx-auto"
-                  src={item.img}
-                />
+                <div className="text-gray-300 text-6xl mb-6">
+                  <FaUserCircle className="mx-auto" />
+                </div>
                 <p className="leading-relaxed text-gray-700 mb-4">{item.quote}</p>
                 <span className="inline-block h-1 w-10 rounded mb-4" style={{ backgroundColor: "#2d2d2d" }}></span>
                 <h2 className="text-gray-900 font-semibold tracking-wider text-[1rem] uppercase">
                   {item.name}
                 </h2>
-                <p className="text-gray-500 text-sm">{item.role}</p>
               </div>
             </div>
           ))}

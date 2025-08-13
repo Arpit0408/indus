@@ -2,25 +2,27 @@ import { useEffect, useState } from 'react';
 import { Routes, Route } from 'react-router-dom';
 
 import Layout from './components/Layout';
+import ScrollToTop from './components/ScrollToTop';  // Import here
 
 import Home from './pages/Home';
 import AboutUs from './pages/AboutUs';
 import Services from './pages/Services';
 import FAQ from './pages/FAQ';
 import Contact from './pages/Contact';
+
 import Blog from './pages/Blog';
 import BlogPost from './pages/BlogPost';
-import Preloader from './components/Preloader';  // Make sure to import Preloader if it's a component
+
+import AdminBlog from './admin/Blog.jsx';
+import BlogForm from './admin/BlogForm.jsx';
+
+import Preloader from './components/Preloader';
 
 function App() {
   const [loading, setLoading] = useState(true);
 
   useEffect(() => {
-    // Simulate loading delay or use actual loading state
-    const timer = setTimeout(() => {
-      setLoading(false);
-    }, 2000); // 2 seconds preloader
-
+    const timer = setTimeout(() => setLoading(false), 2000);
     return () => clearTimeout(timer);
   }, []);
 
@@ -29,14 +31,21 @@ function App() {
       {loading && <Preloader />}
       {!loading && (
         <Layout>
+          <ScrollToTop />  {/* Add here */}
           <Routes>
+            {/* Your routes here */}
             <Route path="/" element={<Home />} />
             <Route path="/about" element={<AboutUs />} />
             <Route path="/service" element={<Services />} />
             <Route path="/faq" element={<FAQ />} />
             <Route path="/contact" element={<Contact />} />
+
             <Route path="/blog" element={<Blog />} />
-            <Route path="/blog/:postId" element={<BlogPost />} />
+            <Route path="/blog/:slug" element={<BlogPost />} />
+
+            <Route path="/admin/blog" element={<AdminBlog />} />
+            <Route path="/admin/blog/new" element={<BlogForm />} />
+            <Route path="/admin/blog/:postId" element={<BlogForm />} />
           </Routes>
         </Layout>
       )}
