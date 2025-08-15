@@ -8,21 +8,21 @@ import { Box, Typography, Button, useMediaQuery } from '@mui/material';
 import 'swiper/css';
 import 'swiper/css/navigation';
 
-import slide4 from '../assets/images/photorealistic-lawyer-environment.jpg';
+import slide4 from '../assets/images/legal-law-justice-concept_218381-34437.avif';
 import slide5 from '../assets/images/close-up-law-scale.jpg';
 
 const slides = [
   {
     image: slide4,
-    caption: 'Seamless Cross-Border Legal Solutions',
-    headingLine1: 'Bridging U.S. Confidence',
-    headingLine2: 'With Indian Legal Authority.',
+    caption: 'Built for NRIs, Global Indians & Families',
+    headingLine1: 'From Confusion to',
+    headingLine2: 'Clarity, We Represent What Matters.',
   },
   {
     image: slide5,
     caption: 'Built for NRIs, Global Indians & Families',
-    headingLine1: 'From Confusion to Clarity,',
-    headingLine2: 'We Represent What Matters.',
+    headingLine1: 'From Confusion to',
+    headingLine2: 'Clarity, We Represent What Matters.',
   },
 ];
 
@@ -57,81 +57,87 @@ export default function HeroSection() {
                 height: '80vh',
                 backgroundImage: `url(${slide.image})`,
                 backgroundSize: 'cover',
-                
-                backgroundPosition: 'top',
+                backgroundPosition: 'center',
                 '&::after': {
                   content: '""',
                   position: 'absolute',
                   top: 0,
                   left: 0,
-                  width: '100vw',
+                  width: '100%',
                   height: '100%',
-                  backgroundColor: 'rgba(0, 0, 0, 0)',
+                  backgroundColor: 'rgba(0, 0, 0, 0.5)', // dark overlay
                   zIndex: 1,
-                  padding: '0px',
-                  margin:'0px'
                 },
               }}
             >
               <Box
                 sx={{
                   position: 'absolute',
-                  top: isSmall ? '20%' : isMedium ? '10%' : '20%',
+                  top: isSmall ? '30%' : isMedium ? '30%' : '30%',
                   left: isSmall ? '5%' : '8%',
                   zIndex: 2,
-                  maxWidth: '700px',
+                  maxWidth: '750px',
                   color: 'white',
                 }}
               >
                 <Typography
-                  variant="subtitle1"
-                  sx={{ fontSize: isSmall ? 16 : 20, fontWeight: 300, color: '#fff' }}
-                >
-                  {slide.caption}
-                </Typography>
+  sx={{
+    textTransform: 'uppercase',
+    fontSize: '1rem',
+    color: '#d4c291',
+    display: 'inline-block', // ensures border only under text
+    pb: 0.5, // spacing between text and border
+  }}
+>
+  Championing the Rights of NRIs & Global Indians Worldwide
+</Typography>
+
+                {/* Headline */}
                 <Typography
                   variant="h2"
                   sx={{
                     fontSize: isSmall ? 28 : isMedium ? 42 : 60,
                     lineHeight: isSmall ? '38px' : isMedium ? '56px' : '80px',
-                    my: 2,
+                    my: 1,
                     color: '#fff',
+                    fontWeight: 500,
+                        borderBottom: '1px solid #d4c291',
+
                   }}
                 >
                   {slide.headingLine1}
-                  <br />
-                  {slide.headingLine2}
+                  
+                    Clarity
+          , We Represent What Matters.
                 </Typography>
-
+    <Typography
+  sx={{
+    textTransform: 'uppercase',
+    fontSize: '1rem',
+    color: '#d4c291',
+    display: 'inline-block', // ensures border only under text
+    pb: 0.5, // spacing between text and border
+  }}
+>
+Delivering Legal Excellence Beyond Borders</Typography> <br/>
+                {/* CTA Button */}
                 <Button
                   href="/contact"
                   variant="contained"
                   sx={{
-                    backgroundColor: '#d4c291',
+                    backgroundColor: '#c1a05f',
                     color: '#fff',
-                    px: isSmall ? 2 : 4,
-                    py: isSmall ? 1 : 1.5,
+                    px: isSmall ? 3 : 5,
+                    py: isSmall ? 1.2 : 1.8,
                     fontSize: isSmall ? 14 : 16,
                     textTransform: 'capitalize',
-                    fontWeight: 'bold',
-                    position: 'relative',
-                    '&::before': {
-                      content: '""',
-                      position: 'absolute',
-                      top: '50%',
-                      left: '-60px',
-                      transform: 'translateY(-50%)',
-                      width: '85px',
-                      height: '2px',
-                      backgroundColor: '#fff',
-                      transition: 'left 0.3s ease',
-                      display: isMedium ? 'none' : 'block',
-                    },
-                    '&:hover::before': {
-                      left: '-95px',
-                    },
+                    fontWeight: '700',
+                    mt: 3,
+                    borderRadius: '6px',
+                    transition: 'all 0.3s ease',
                     '&:hover': {
-                      backgroundColor: '#d4c291',
+                      backgroundColor: '#a7854f',
+                      transform: 'scale(1.05)',
                     },
                   }}
                 >
@@ -143,56 +149,61 @@ export default function HeroSection() {
         ))}
       </Swiper>
 
-      {/* Custom Arrows */}
-      <Box
-        className="custom-prev"
-        onClick={() => swiper?.slidePrev()}
+      {/* Custom Prev Button */}
+     {!isSmall && (
+  <>
+    {/* Custom Prev Button */}
+    <Box
+      onClick={() => swiper?.slidePrev()}
+      sx={{
+        position: 'absolute',
+        top: '50%',
+        left: 16,
+        transform: 'translateY(-50%)',
+        zIndex: 30,
+        cursor: 'pointer',
+      }}
+    >
+      <ArrowBackIosNewIcon
         sx={{
-          position: 'absolute',
-          top: '50%',
-          left: 16,
-          transform: 'translateY(-50%)',
-          zIndex: 30,
-          cursor: 'pointer',
+          width: 50,
+          height: 50,
+          border: '1px solid #959595',
+          borderRadius: '5px',
+          backgroundColor: 'transparent',
+          color: '#fff',
+          padding: '10px',
         }}
-      >
-        <ArrowBackIosNewIcon
-          sx={{
-            width: 50,
-            height: 50,
-            border: '1px solid #959595',
-            borderRadius: '5px',
-            backgroundColor: '#362c2c00',
-            color: '#fff',
-            padding: '10px',
-          }}
-        />
-      </Box>
+      />
+    </Box>
 
-      <Box
-        className="custom-next"
-        onClick={() => swiper?.slideNext()}
+    {/* Custom Next Button */}
+    <Box
+      onClick={() => swiper?.slideNext()}
+      sx={{
+        position: 'absolute',
+        top: '50%',
+        right: 16,
+        transform: 'translateY(-50%)',
+        zIndex: 30,
+        cursor: 'pointer',
+      }}
+    >
+      <ArrowForwardIosIcon
         sx={{
-          position: 'absolute',
-          top: '50%',
-          right: 16,
-          transform: 'translateY(-50%)',
-          zIndex: 30,
-          cursor: 'pointer',
+          width: 50,
+          height: 50,
+          border: '1px solid #959595',
+          borderRadius: '5px',
+          backgroundColor: 'transparent',
+          color: '#fff',
+          padding: '10px',
         }}
-      >
-        <ArrowForwardIosIcon
-          sx={{
-            width: 50,
-            height: 50,
-            border: '1px solid #959595',
-            borderRadius: '5px',
-            backgroundColor: '#362c2c00',
-            color: '#fff',
-            padding: '10px',
-          }}
-        />
-      </Box>
+      />
+    </Box>
+  </>
+)}
+
     </Box>
   );
 }

@@ -54,7 +54,7 @@ export default function AboutSection() {
                 <Box
                   component="img"
                   src={founders}
-                  alt="About IndUS Synergy Partners Partners"
+                  alt="About IndUS Synergy Partners "
                   sx={{ width: '100%', display: 'block', borderRadius: 1 }}
                 />
               </Box>

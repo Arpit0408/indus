@@ -14,8 +14,7 @@ const FromTheirDesk = () => {
           <div className="flex items-start gap-3 mb-4 text-gray-700">
             <FaQuoteLeft className="text-[#c0b596] text-2xl mt-1" />
             <p className="text-[0.95rem] md:text-base leading-relaxed">
-              “The law must work for you, not against you. It’s not about knowing
-              the system. It’s about having someone inside it who protects your
+              “The law must work for you, not against you. It’s not about knowing the system — it’s about having someone inside it who protects your
               truth.”
             </p>
           </div>

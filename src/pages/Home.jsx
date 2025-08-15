@@ -34,11 +34,7 @@ export default function Home() {
     {/* Introduction */}
     <div className="max-w-5xl mx-auto py-0 text-center">
       <p className="text-[0.95rem] md:text-[1rem] mb-4">
-        Your wealth isn’t just about what you’ve earned, it’s about what you protect, how you
-        transition it, and who benefits from it after you.
- 
-        Our wealth and legacy team brings legal clarity, financial security, and emotional peace of
-        mind to NRI families, high-net-worth individuals, and U.S.-India legacy holders.
+      Your wealth isn’t just about what you’ve earned—it’s about what you protect, how you transition it, and who benefits from it after you. Our Wealth & Legacy team provides legal clarity, financial security, and emotional peace of mind to NRI families, high-net-worth individuals, and U.S.-India legacy holders.
       </p>
     </div>
 

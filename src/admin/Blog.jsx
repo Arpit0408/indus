@@ -67,7 +67,7 @@ export default function Blog() {
                     <>
                       <img
                         src={`${API_BASE_IMG}${blog.image}`}
-                        alt="Blog"
+                          alt="IndUS Synergy Partners Logo - Legal Wisdom and Cross-Border Legal Solutions for NRIs" 
                         style={{ width: 60, height: 40, objectFit: 'cover', borderRadius: 4 }}
                       />
                       <div style={{ fontSize: '0.75rem', wordBreak: 'break-all', marginTop: 4 }}>
