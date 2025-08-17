@@ -15,13 +15,13 @@ const slides = [
   {
     image: slide4,
     caption: 'Built for NRIs, Global Indians & Families',
-    headingLine1: 'From Confusion to',
+    headingLine1: 'From Confusion to ',
     headingLine2: 'Clarity, We Represent What Matters.',
   },
   {
     image: slide5,
     caption: 'Built for NRIs, Global Indians & Families',
-    headingLine1: 'From Confusion to',
+    headingLine1: 'From Confusion to ',
     headingLine2: 'Clarity, We Represent What Matters.',
   },
 ];
