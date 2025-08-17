@@ -97,7 +97,7 @@ export default function AboutSection() {
                   mb: 2,
                 }}
               >
-                At IndUS Synergy Partners Partners, we are not just attorneys or advisors. We are your partners in clarity—bridging the complexity of Indian legal systems with the confidence of U.S.-based coordination.
+                At IndUS Synergy Partners Partners, we are not just attorneys or advisors. We are your partners in clarity, bridging the complexity of Indian legal systems with the confidence of U.S.-based coordination.
               </Typography>
 
               <Typography
