@@ -31,7 +31,7 @@ const Footer = () => {
                   <ul className="overflow-hidden pt-[15px] flex space-x-[15px]">
                     {[
                       { icon: 'facebook', url: 'https://www.facebook.com/share/1RWJ91CoqA/?mibextid=wwXIfr' },
-                      { icon: 'twitter-alt', url: 'https://www.twitter.com/dummy' },
+                      { icon: 'twitter-alt', url: 'https://x.com/indussynergyp?s=11' },
                       { icon: 'linkedin', url: 'https://www.linkedin.com/dummy' },
                       { icon: 'instagram', url: 'https://www.instagram.com/dummy' },
                     ].map(({ icon, url }, index) => (
