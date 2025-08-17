@@ -15,7 +15,7 @@ import BlogPost from './pages/BlogPost';
 
 import AdminBlog from './admin/Blog.jsx';
 import BlogForm from './admin/BlogForm.jsx';
-import TermsAndConditions from './pages/TermsAndConditions';
+import TermsAndConditions from './pages/TermsAndConditions.jsx';
 
 import Preloader from './components/Preloader';
 
