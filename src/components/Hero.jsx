@@ -8,7 +8,7 @@ import { Box, Typography, Button, useMediaQuery } from '@mui/material';
 import 'swiper/css';
 import 'swiper/css/navigation';
 
-import slide4 from '../assets/images/legal-law-justice-concept_218381-34437.avif';
+import slide4 from '../assets/images/lawb1.avif';
 import slide5 from '../assets/images/close-up-law-scale.jpg';
 
 const slides = [
