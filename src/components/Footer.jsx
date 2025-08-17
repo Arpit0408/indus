@@ -116,7 +116,7 @@ const Footer = () => {
               <div className="h-[1px] absolute left-[15px] top-0 bg-[#ffffff0d] w-[calc(100%+30px)]"></div>
               <p className="text-center text-white text-[14px] py-[20px]">
                 &copy; 2025 IndUS Synergy Partners. All rights reserved |{' '}
-                <Link to="/privacy" className="hover:underline">Privacy Policy</Link>
+                <Link to="/termsandconditions" className="hover:underline">Terms And Conditions</Link>
               </p>
             </div>
           </div>
