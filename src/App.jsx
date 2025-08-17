@@ -15,6 +15,7 @@ import BlogPost from './pages/BlogPost';
 
 import AdminBlog from './admin/Blog.jsx';
 import BlogForm from './admin/BlogForm.jsx';
+import TermsAndConditions from './pages/TermsAndConditions';
 
 import Preloader from './components/Preloader';
 
@@ -39,6 +40,7 @@ function App() {
             <Route path="/service" element={<Services />} />
             <Route path="/faq" element={<FAQ />} />
             <Route path="/contact" element={<Contact />} />
+            <Route path="/termsandconditions " element={<TermsAndConditions  />} />
 
             <Route path="/blog" element={<Blog />} />
             <Route path="/blog/:slug" element={<BlogPost />} />
